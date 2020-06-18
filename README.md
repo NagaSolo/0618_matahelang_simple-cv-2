@@ -12,3 +12,8 @@ Computer Vision Project Idea – Watermarking Images using OpenCV
 - Many businesses require watermarking on all the images.
 - It is a repetitive task that needs to be automated.
 - Build a project/product/craft to automate the watermarking task on all images provided to the application.
+
+### Progress
+
+Step 1:
+- download module from here: *http://simplecv.org/download/* -> `WIP`
