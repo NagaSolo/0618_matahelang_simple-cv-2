@@ -16,5 +16,6 @@ Computer Vision Project Idea – Watermarking Images using OpenCV
 ### Progress
 
 Step 1:
+- python environment variable -> `windows`
 - download module from here: *http://simplecv.org/download/* -> `DONE`
 - use library -> `WIP`
