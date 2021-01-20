@@ -24,4 +24,6 @@ Step 1:
 
 ### Product
 
-- streamlit app -`ONGOING`
+- streamlit app - `ONGOING`
+- tkinter app - `ONGOING`
+- fastapi - `ONGOING`
