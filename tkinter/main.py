@@ -29,10 +29,11 @@ class Paparan(Frame):
     def hakCipta(self):
         disedia = Label(
             text='__author__ = "Wan Ab Muadz Adzim\n__copyright__ = "Copyright (C) 2004 Matahelang\n__version__ = "1.0"',
-            font=("arial italic", 18))
+            font=("arial italic", 15))
         disedia.pack()
 
     def bukaImej(self):
+        
         namafile = filedialog.askopenfilename(initialdir='/',title='Pilih imej')
         load = Image.open(namafile)
         render = ImageTk.PhotoImage(load)
