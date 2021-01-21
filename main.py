@@ -1,8 +1,8 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-proc_dir = r'test_imgs_wmarked'
-unproc_dir = r'test_imgs'
+proc_dir = r'wmarked_imgs'
+unproc_dir = r'input_imgs'
 
 proc_dir_list = os.listdir(proc_dir)
 unproc_dir_list = os.listdir(unproc_dir)
