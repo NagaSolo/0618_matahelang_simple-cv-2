@@ -1,7 +1,8 @@
 import streamlit as st
 
 def deskripsi():
-    pass
+    st.title('WMark')
+    st.subheader('Me"Water marked"kan gambar peribadi mu')
 
 def aplikasi():
     pass
