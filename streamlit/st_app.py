@@ -11,5 +11,16 @@ def informasi():
     pass
 
 def main():
-    pass
+    menu = st.sidebar
+    menu.title('Menu')
+    pilihan_pilihan = ['Deskripsi', 'Aplikasi', 'Informasi']
+    memilih = menu.selectbox('Pilihan', pilihan_pilihan)
+    if memilih == 'Deskripsi':
+        deskripsi()
+    elif memilih == 'Aplikasi':
+        aplikasi()
+    elif memilih == 'Informasi':
+        informasi()
 
+if __name__ == '__main__':
+    main()
