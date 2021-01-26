@@ -8,7 +8,9 @@ def aplikasi():
     pass
 
 def informasi():
-    pass
+    with st.beta_expander('Penyedia'):
+        st.write('Seramamas')
+        st.write('Matahelang')
 
 def main():
     menu = st.sidebar
