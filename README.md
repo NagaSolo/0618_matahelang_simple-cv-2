@@ -22,8 +22,14 @@ Step 1:
     - pillow
     - os
 
+### Django app
+- User
+- watermark app
+- blog app
+
 ### Product
 
 - streamlit app - `ONGOING`
 - tkinter app - `ONGOING`
 - fastapi - `ONGOING`
+- jango app - `ONGOING`
