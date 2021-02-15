@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'postImage.apps.PostimageConfig',
-    'users.app.UsersConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
