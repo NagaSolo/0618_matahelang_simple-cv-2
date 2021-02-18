@@ -1,0 +1,11 @@
+{% extends "postimage/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h2>Anda telah log keluar daripada akaun</h2>
+    <div class="border-top-pt-3">
+        <small class="text-muted">
+            <a href="{% url 'register' %}">Log Masuk</a>
+        </small>
+    </div>
+{% endblock content %}
