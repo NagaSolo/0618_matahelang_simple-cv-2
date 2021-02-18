@@ -6,16 +6,16 @@
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Daftar sebagai pengguna</legend>
+                <legend class="border-bottom mb-4">Log Masuk</legend>
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button btn btn-outline-info type="submit">Daftar</button>
+                <button btn btn-outline-info type="submit">Masuk</button>
             </div>
         </form>
         <div class="border-top-pt-3">
             <small class="text-muted">
-                Punyai akaun pengguna? <a class="ml-2" href="{% url 'login' %}">Log Masuk</a>
+                Tiada akaun pengguna? <a class="ml-2" href="{% url 'register' %}">Daftar</a>
             </small>
         </div>
     </div>

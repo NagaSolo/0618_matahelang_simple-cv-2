@@ -6,6 +6,7 @@ from .forms import UserRegisterForm
 from django.contrib import messages
 
 def register(request):
+    form = UserRegisterForm()
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid:
