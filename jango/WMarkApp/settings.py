@@ -128,3 +128,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'postImage-rumah'
+
+LOGIN_URL = 'login' # redirect to login if unauthorized user try to access profile
