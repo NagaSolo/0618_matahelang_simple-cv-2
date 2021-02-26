@@ -2,7 +2,11 @@ from django.shortcuts import render
 
 from .models import PostImage
 
-from django.views.generic import ListView, DetailView
+from django.views.generic import (
+    ListView, 
+    DetailView,
+    CreateView
+)
 
 # Ini sudah tidak diguna
 def rumah(request):
@@ -21,6 +25,16 @@ class ImejListView(ListView):
 # gunapakai kelas DetailView untuk detail setiap post imej
 class ImejDetailView(DetailView):
     model = PostImage
+
+# gunapakai kelas CreateView untuk post imej baharu
+class ImejCreateView(CreateView):
+    model = PostImage
+    fields = ['title', 'content', 'cover']
+
+    def form_valid(self, form):
+        # check if owner of the form sent is the same as currently logged in user
+        form.instance.owner == self.request.user
+        return super().form_valid(form)
 
 def tentang(request):
     return render(request, 'postimage/about.html')

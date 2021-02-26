@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
+from django.urls import reverse
+
 class PostImage(models.Model):
     title = models.TextField()
     content = models.TextField()
@@ -11,3 +13,7 @@ class PostImage(models.Model):
 
     def __str__(self):
         return self.title
+
+    # membolehkan django membaca string url
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={ 'pk' : self.pk })
