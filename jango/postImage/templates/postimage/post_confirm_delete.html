@@ -1,0 +1,17 @@
+{% extends "postimage/base.html" %}
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Buang</legend>
+                <h2>Anda pasti mahu membuang pos {{ object.title }}?</h2>
+            </fieldset>
+            <div class="form-group">
+                <button btn btn-outline-danger type="submit">Ya</button>
+                <a btn btn-outline-secondary href="{{ url 'postImage-detail' object.id }}">Batal</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

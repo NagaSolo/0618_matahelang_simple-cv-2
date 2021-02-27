@@ -2,10 +2,14 @@ from django.shortcuts import render
 
 from .models import PostImage
 
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
 from django.views.generic import (
     ListView, 
     DetailView,
-    CreateView
+    CreateView,
+    UpdateView,
+    DeleteView
 )
 
 # Ini sudah tidak diguna
@@ -25,16 +29,45 @@ class ImejListView(ListView):
 # gunapakai kelas DetailView untuk detail setiap post imej
 class ImejDetailView(DetailView):
     model = PostImage
+    template_name = 'postimage/post_detail.html'
 
 # gunapakai kelas CreateView untuk post imej baharu
-class ImejCreateView(CreateView):
+class ImejCreateView(LoginRequiredMixin, CreateView):
     model = PostImage
+    template_name = 'postimage/post_form.html'
     fields = ['title', 'content', 'cover']
 
     def form_valid(self, form):
         # check if owner of the form sent is the same as currently logged in user
         form.instance.owner == self.request.user
         return super().form_valid(form)
+
+# gunapakai kelas UpdateView untuk update post
+class ImejUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = PostImage
+    template_name = 'postimage/post_form.html'
+    fields = ['title', 'content', 'cover']
+
+    def form_valid(self, form):
+        # check if owner of the form sent is the same as currently logged in user
+        form.instance.owner == self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        imej = self.get_object()
+        if self.request.user == self.imej.owner:
+            return True
+        return False
+
+# gunapakai kelas DeleteView untuk delete setiap spesifik imej
+class ImejDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = PostImage
+
+    def test_func(self):
+        imej = self.get_object()
+        if self.request.user == self.imej.owner:
+            return True
+        return False
 
 def tentang(request):
     return render(request, 'postimage/about.html')

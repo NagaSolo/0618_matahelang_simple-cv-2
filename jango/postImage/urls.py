@@ -6,7 +6,9 @@ from . import views
 from .views import (
     ImejListView, 
     ImejDetailView,
-    ImejCreateView
+    ImejCreateView,
+    ImejUpdateView,
+    ImejDeleteView
 )
 
 urlpatterns = [
@@ -14,5 +16,7 @@ urlpatterns = [
     path('', ImejListView.as_view(), name='postImage-rumah'),
     path('imej/<int:pk>/', ImejDetailView.as_view(), name='postImage-detail'),
     path('imej/baru/', ImejCreateView.as_view(), name='postImage-create'),
+    path('imej/<int:pk>/kemaskini/', ImejUpdateView.as_view(), name='postImage-update'),
+    path('imej/<int:pk>/buang/', ImejDeleteView.as_view(), name='postImage-delete'),
     path('tentang/', views.tentang, name='postImage-tentang'),
 ]
