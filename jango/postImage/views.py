@@ -62,6 +62,7 @@ class ImejUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 # gunapakai kelas DeleteView untuk delete setiap spesifik imej
 class ImejDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = PostImage
+    success_url = '/'
 
     def test_func(self):
         imej = self.get_object()
