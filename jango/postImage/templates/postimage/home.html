@@ -8,7 +8,7 @@
           <a class="mr-2" href="#">{{ imej.owner }}</a>
           <small class="text-muted">{{ imej.date_posted|date:"F d, Y" }}</small>
         </div>
-        <h2><a class="article-title" href="{{% url 'postImage-detail' imej.id %}}">{{ imej.title }}</a></h2>
+        <h2><a class="article-title" href="{% url 'postImage-detail' imej.id %}">{{ imej.title }}</a></h2>
         <p class="article-content">{{ imej.content }}</p>
         <img src="{{ imej.cover.url }}" alt="{{ imej.title }}">
       </div>
