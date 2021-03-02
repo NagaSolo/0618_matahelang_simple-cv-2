@@ -23,9 +23,9 @@ Step 1:
     - os
 
 ### Django app
-- User
-- watermark app
-- blog app
+    - User - `ONGOING`
+    - watermark app - `ONGOING`
+    - blog app - `DONE`
 
 ### Product
 
